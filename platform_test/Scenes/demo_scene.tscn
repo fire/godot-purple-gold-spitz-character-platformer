@@ -1,0 +1,146 @@
+[gd_scene load_steps=41 format=3 uid="uid://b0sejhjcqols8"]
+
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/robots/wheel_robot.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/robots/mr_cat_pc.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/speech_bubble.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/robots/cat_helmet.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/robots/cloth_pipes.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/front_pipes.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/floor_front.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/store_wall.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/table_cloth.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/background/gears.tscn" id="10"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/ads.tscn" id="11"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/furniture.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://cx6pa4gafgt88" path="res://platform_test/assets/inherited_scenes/background/background_wall.tscn" id="13"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/tools.tscn" id="14"]
+[ext_resource type="PackedScene" uid="uid://3yyd0tibggpn" path="res://platform_test/assets/inherited_scenes/background/floor_background.tscn" id="15"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/tickets.tscn" id="16"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/background/background_cylinders.tscn" id="17"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/background/background_pipes_closer.tscn" id="18"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/background/background_cube.tscn" id="19"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/props.tscn" id="20"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/stoplight.tscn" id="21"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/table.tscn" id="22"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/background/background_pipes.tscn" id="23"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/po_box.tscn" id="24"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/ceiling.tscn" id="25"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/accesories/cristal.tscn" id="26"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/accesories/weight.tscn" id="27"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/accesories/old_robots.tscn" id="28"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/accesories/radio_nes.tscn" id="29"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/accesories/old_robots_bottom.tscn" id="30"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/girl/body.tscn" id="32"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/girl/gloves.tscn" id="33"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/girl/vest.tscn" id="34"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/girl/hat.tscn" id="35"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/girl/face.tscn" id="36"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/girl/eyes.tscn" id="37"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/girl/hair.tscn" id="38"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/shop/glass_bottles.tscn" id="39"]
+[ext_resource type="PackedScene" path="res://platform_test/assets/inherited_scenes/background/smoke.tscn" id="41"]
+
+[sub_resource type="BoxMesh" id="8"]
+size = Vector3(2, 7, 4)
+
+[node name="DemoScene" type="Node3D"]
+script = null
+
+[node name="Accesories" type="Node3D" parent="."]
+script = null
+
+[node name="Cristal" parent="Accesories" instance=ExtResource( "26" )]
+
+[node name="OldRobots" parent="Accesories" instance=ExtResource( "28" )]
+
+[node name="OldRobotsBottom" parent="Accesories" instance=ExtResource( "30" )]
+
+[node name="RadioNes" parent="Accesories" instance=ExtResource( "29" )]
+
+[node name="Weight" parent="Accesories" instance=ExtResource( "27" )]
+
+[node name="Background" type="Node3D" parent="."]
+script = null
+
+[node name="BackgroundCube" parent="Background" instance=ExtResource( "19" )]
+
+[node name="BackgroundCylinders" parent="Background" instance=ExtResource( "17" )]
+
+[node name="BackgroundPipes" parent="Background" instance=ExtResource( "23" )]
+
+[node name="BackgroundPipesCloser" parent="Background" instance=ExtResource( "18" )]
+
+[node name="BackgroundWall" parent="Background" instance=ExtResource( "13" )]
+
+[node name="FloorBackground" parent="Background" instance=ExtResource( "15" )]
+
+[node name="Gears" parent="Background" instance=ExtResource( "10" )]
+
+[node name="Smoke" parent="Background" instance=ExtResource( "41" )]
+
+[node name="Girl" type="Node3D" parent="."]
+script = null
+
+[node name="Body" parent="Girl" instance=ExtResource( "32" )]
+
+[node name="Eyes" parent="Girl" instance=ExtResource( "37" )]
+
+[node name="Face" parent="Girl" instance=ExtResource( "36" )]
+
+[node name="Gloves" parent="Girl" instance=ExtResource( "33" )]
+
+[node name="Hair" parent="Girl" instance=ExtResource( "38" )]
+
+[node name="Hat" parent="Girl" instance=ExtResource( "35" )]
+
+[node name="Vest" parent="Girl" instance=ExtResource( "34" )]
+
+[node name="Robots" type="Node3D" parent="."]
+script = null
+
+[node name="CatHelmet" parent="Robots" instance=ExtResource( "4" )]
+
+[node name="ClothPipes" parent="Robots" instance=ExtResource( "5" )]
+
+[node name="MrCatPC" parent="Robots" instance=ExtResource( "2" )]
+
+[node name="WheelRobot" parent="Robots" instance=ExtResource( "1" )]
+
+[node name="Shop" type="Node3D" parent="."]
+script = null
+
+[node name="Ads" parent="Shop" instance=ExtResource( "11" )]
+
+[node name="Ceiling" parent="Shop" instance=ExtResource( "25" )]
+
+[node name="FloorFront" parent="Shop" instance=ExtResource( "7" )]
+
+[node name="FrontPipes" parent="Shop" instance=ExtResource( "6" )]
+
+[node name="Furniture" parent="Shop" instance=ExtResource( "12" )]
+
+[node name="GlassBottles" parent="Shop" instance=ExtResource( "39" )]
+
+[node name="POBox" parent="Shop" instance=ExtResource( "24" )]
+
+[node name="Props" parent="Shop" instance=ExtResource( "20" )]
+
+[node name="Stoplight" parent="Shop" instance=ExtResource( "21" )]
+
+[node name="StoreWall" parent="Shop" instance=ExtResource( "8" )]
+
+[node name="Table" parent="Shop" instance=ExtResource( "22" )]
+
+[node name="TableCloth" parent="Shop" instance=ExtResource( "9" )]
+
+[node name="Tickets" parent="Shop" instance=ExtResource( "16" )]
+
+[node name="Tools" parent="Shop" instance=ExtResource( "14" )]
+
+[node name="SpeechBubble" parent="Shop" instance=ExtResource( "3" )]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6446, 3.38254, -5.60519)
+mesh = SubResource( "8" )
+surface_material_override/0 = null
+script = null

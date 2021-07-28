@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture2D"
+uid="uid://cwv8jmk7rjt5r"
+path.s3tc="res://.godot/imported/BaseLowPoly_ConversationArticles_Normal.png-12af01ee0ea9dd531231be7e7975f19a.s3tc.stex"
+metadata={
+"imported_formats": ["bptc", "s3tc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://platform_test/assets/textures/BaseLowPoly_ConversationArticles_Normal.png"
+dest_files=["res://.godot/imported/BaseLowPoly_ConversationArticles_Normal.png-12af01ee0ea9dd531231be7e7975f19a.s3tc.stex"]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/bptc_ldr=0
+compress/normal_map=1
+compress/channel_pack=0
+compress/streamed=false
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/textures/BaseLowPoly_ConversationArticles_Normal.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/HDR_as_SRGB=false
+process/size_limit=0
+detect_3d/compress_to=0
+svg/scale=1.0

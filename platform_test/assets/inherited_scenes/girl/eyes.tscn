@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://platform_test/assets/source_scene/girl/eyes.glb" id="1"]
+
+[node name="Eyes" instance=ExtResource( 1 )]
+
+[node name="Eyes" parent="." index="0"]
+layers = 2
+extra_cull_margin = 8.0

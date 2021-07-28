@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://platform_test/assets/source_scene/shop/front_pipes.glb" id="1"]
+
+[node name="FrontPipes" instance=ExtResource( 1 )]
+
+[node name="Front Pipes" parent="." index="0"]
+extra_cull_margin = 8.0

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://platform_test/assets/source_scene/accesories/cristal.glb" id="1"]
+[ext_resource type="Material" path="res://platform_test/assets/materials/glass.tres" id="2"]
+
+[node name="Cristal" instance=ExtResource( 1 )]
+
+[node name="Cristal" parent="." index="0"]
+material_override = ExtResource( 2 )
+extra_cull_margin = 8.0

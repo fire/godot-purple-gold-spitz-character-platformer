@@ -1,0 +1,40 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cnup1pa4kp1j0"
+path="res://.godot/imported/vest.glb-b95a505aca485fbf146f3bff922ab1a9.scn"
+
+[deps]
+
+source_file="res://platform_test/assets/source_scene/girl/vest.glb"
+dest_files=["res://.godot/imported/vest.glb-b95a505aca485fbf146f3bff922ab1a9.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=3
+meshes/lightmap_texel_size=0.1
+skins/use_named_skins=true
+animation/import=true
+animation/bake_reset_animation=true
+animation/fps=15
+import_script/path=""
+_subresources={
+"meshes": {
+"Extended_Vest": {
+"generate/lightmap_uv": 1
+}
+},
+"nodes": {
+"PATH:Vest2": {
+"import/skip_import": true
+}
+}
+}

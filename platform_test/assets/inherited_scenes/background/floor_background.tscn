@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://3yyd0tibggpn"]
+
+[ext_resource type="PackedScene" uid="uid://c27ocwltcyfno" path="res://platform_test/assets/source_scene/background/floor_background.glb" id="1"]
+
+[node name="FloorBackground" instance=ExtResource( "1" )]
+
+[node name="Floor Background" parent="." index="0"]
+extra_cull_margin = 8.0
