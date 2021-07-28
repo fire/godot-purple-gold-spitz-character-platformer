@@ -104,7 +104,6 @@ action_jump={
 
 [rendering]
 
-textures/vram_compression/import_bptc=true
 textures/vram_compression/import_etc2=false
 anti_aliasing/quality/msaa=1
 anti_aliasing/quality/screen_space_aa=1
