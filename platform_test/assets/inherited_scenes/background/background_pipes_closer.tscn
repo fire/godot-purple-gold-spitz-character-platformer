@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3]
-
-[ext_resource type="PackedScene" path="res://platform_test/assets/source_scene/background/background_pipes_closer.glb" id="1"]
-
-[node name="BackgroundPipesCloser" instance=ExtResource( 1 )]
-
-[node name="Background Pipes Closer" parent="." index="0"]
-extra_cull_margin = 8.0
