@@ -27,11 +27,11 @@ var _camera_light: OmniLight3D
 
 
 # Define for Movement
-const GRAVITY: float = 30.0 # 重力加速度
+const GRAVITY: float = 30.0 # Gravitational Acceleration
 const DIRECTION_INTERPOLATE_SPEED: float = 1.0
-const MOTION_INTERPOLATE_SPEED: float = 20.0 # 移動速度
-const ROTATION_INTERPOLATE_SPEED: float = 20.0 # 転回速度
-const JUMP_SPEED: float = 12.0 # ジャンプ初速度
+const MOTION_INTERPOLATE_SPEED: float = 20.0 # Movement Speed
+const ROTATION_INTERPOLATE_SPEED: float = 20.0 # Rotation Speed
+const JUMP_SPEED: float = 12.0 # Jump Initial Velocity
 const FLOOR_WAIT = 3.0
 enum PLAYER_POSITION_STATE {
 	FLOOR,
@@ -151,19 +151,12 @@ func _apply_orientation(delta: float, orientation: Transform3D) -> void:
 	else:
 		_state_gravity = -GRAVITY * delta
 		self.linear_velocity.y = self.linear_velocity.y + _state_gravity
-	
 
 	# Movement when jumping
 	var final_jump_velocity = _state_jump_velocity
 	if !self.is_on_floor():
-		if _state_jump_velocity.x * _state_jump_additional_velocity.x > 0 && abs(_state_jump_additional_velocity.x) > abs(_state_jump_velocity.x):
-			final_jump_velocity.x = _state_jump_additional_velocity.x
-		else:
-			final_jump_velocity.x = _state_jump_velocity.x + _state_jump_additional_velocity.x
-		if _state_jump_velocity.z * _state_jump_additional_velocity.z > 0 && abs(_state_jump_additional_velocity.z) > abs(_state_jump_velocity.z):
-			final_jump_velocity.z = _state_jump_additional_velocity.z
-		else:
-			final_jump_velocity.z = _state_jump_velocity.z + _state_jump_additional_velocity.z
+		final_jump_velocity.x = _state_jump_velocity.x + _state_jump_additional_velocity.x
+		final_jump_velocity.z = _state_jump_velocity.z + _state_jump_additional_velocity.z
 
 	# Calc snap value
 	if self.is_on_floor() && !_state_is_jumping:    
@@ -256,10 +249,6 @@ func _tps_movement(delta: float) -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func _process(delta):
 	# After ready
 	if _once:
@@ -291,9 +280,6 @@ func _process(delta):
 				var current_velocity_normal = self.linear_velocity.normalized()
 				var slide_velocity: Vector3 = Vector3(current_velocity_normal.x, 0, current_velocity_normal.y)
 				slide_velocity = slide_velocity.normalized() * 4.0 # run root motion speed
-				if self.is_on_floor():
-					slide_velocity = slide_velocity.slide(self.get_floor_normal())
-				slide_velocity = Vector3(slide_velocity.x, 0, slide_velocity.z)
 				_state_jump_speed = slide_velocity.length()
 			else:
 				_state_was_running_before_jumping = false

@@ -2,17 +2,17 @@
 
 importer="texture"
 type="StreamTexture2D"
-uid="uid://bcj14o81q8x6n"
 path.s3tc="res://.godot/imported/checker_pattern.png-b585c37b42f6ae3b36ca4ecde8c8def3.s3tc.stex"
+path.etc2="res://.godot/imported/checker_pattern.png-b585c37b42f6ae3b36ca4ecde8c8def3.etc2.stex"
 metadata={
-"imported_formats": ["s3tc"],
+"imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/checker_pattern.png"
-dest_files=["res://.godot/imported/checker_pattern.png-b585c37b42f6ae3b36ca4ecde8c8def3.s3tc.stex"]
+dest_files=["res://.godot/imported/checker_pattern.png-b585c37b42f6ae3b36ca4ecde8c8def3.s3tc.stex", "res://.godot/imported/checker_pattern.png-b585c37b42f6ae3b36ca4ecde8c8def3.etc2.stex"]
 
 [params]
 
