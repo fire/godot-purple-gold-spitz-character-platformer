@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Purple Gold Spitz"
-run/main_scene="res://platform_test/Scenes/PlayScene.tscn"
+run/main_scene="res://Scenes/PlayScene.tscn"
 config/icon="res://platform_test/Others/icon.png"
 
 [compression]
