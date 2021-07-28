@@ -38,7 +38,6 @@ window/size/always_on_top=true
 window/size/test_width=1280
 window/size/test_height=720
 window/dpi/allow_hidpi=true
-window/subwindows/embed_subwindows=true
 
 [editor_plugins]
 
