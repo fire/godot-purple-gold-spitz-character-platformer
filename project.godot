@@ -33,9 +33,12 @@ formats/zstd/long_distance_matching=true
 window/size/width=1280
 window/size/height=720
 window/size/resizable=false
+window/size/borderless=true
+window/size/always_on_top=true
 window/size/test_width=1280
 window/size/test_height=720
 window/dpi/allow_hidpi=true
+window/subwindows/embed_subwindows=true
 
 [editor_plugins]
 

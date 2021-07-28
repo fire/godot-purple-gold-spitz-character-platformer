@@ -37,7 +37,7 @@ sky = SubResource( "2" )
 script = ExtResource( "15" )
 
 [node name="Player" parent="." instance=ExtResource( "2" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74547, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19209e-07, 0)
 infinite_inertia = false
 
 [node name="Rooms" type="Node3D" parent="."]
