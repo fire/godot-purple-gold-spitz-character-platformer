@@ -187,7 +187,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 script = null
 
 [node name="DemoScene" parent="Environments" instance=ExtResource( "24_bq7yo" )]
-transform = Transform3D(-0.796118, 0, -0.605141, 0, 1, 0, 0.605141, 0, -0.796118, 5.7642, 0, 5.73049)
+transform = Transform3D(-0.796118, 0, -0.605141, 0, 1, 0, 0.605141, 0, -0.796118, 5.7642, -0.32937, 5.73049)
 
 [node name="Texts" type="Node3D" parent="."]
 script = null
