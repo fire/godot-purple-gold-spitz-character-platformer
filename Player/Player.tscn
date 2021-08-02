@@ -77,6 +77,12 @@ script = ExtResource( "6" )
 
 [node name="player" parent="." instance=ExtResource( "2_omwbw" )]
 
+[node name="Skeleton3D" parent="player/Player" index="0"]
+bones/11/pose = Transform3D(1, 2.64698e-23, 2.35099e-38, -2.64698e-23, 1, 1.77636e-15, 2.35099e-38, -1.77636e-15, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" parent="player" index="1"]
+blend_times = []
+
 [node name="Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource( "3" )
@@ -85,8 +91,10 @@ script = null
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( "7" )
 anim_player = NodePath("../player/AnimationPlayer")
-root_motion_track = NodePath("Player/Skeleton3D:root")
+root_motion_track = NodePath("PlayerExport3/Skeleton3D:root")
 parameters/StateGeneral/current = 0
 parameters/StateJump/current = 0
 parameters/StateLand/current = 0
 script = null
+
+[editable path="player"]
