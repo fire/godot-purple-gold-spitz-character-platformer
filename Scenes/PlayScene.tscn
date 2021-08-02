@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://b1pv62pn7yets"]
 
 [ext_resource type="PackedScene" path="res://StaticObjects/Floor/Floor.tscn" id="1"]
-[ext_resource type="PackedScene" uid="uid://78etltjhcl7e" path="res://Player/Player.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://Player/Player.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://StaticObjects/Block/Block.tscn" id="3"]
 [ext_resource type="PackedScene" path="res://StaticObjects/Room/Room.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://StaticObjects/SlopeLow/SlopeLow.tscn" id="5"]
@@ -37,7 +37,7 @@ sky = SubResource( "2" )
 script = ExtResource( "15" )
 
 [node name="Player" parent="." instance=ExtResource( "2" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18554, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46609, 0)
 
 [node name="Rooms" type="Node3D" parent="."]
 script = null
@@ -199,7 +199,7 @@ script = null
 offset_top = 684.0
 offset_right = 1280.0
 offset_bottom = 710.0
-theme_override_colors/font_color = Color(0.027451, 0.407843, 1, 1)
+custom_colors/font_color = Color(0.027451, 0.407843, 1, 1)
 text = "Move: WASD / Camera: Arrow / Jump: Space / Run: Shift"
 align = 1
 valign = 2
@@ -214,9 +214,9 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 50.0
 offset_bottom = 33.0
-theme_override_colors/font_outline_color = Color(0.2, 0.2, 0.2, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 2
+custom_colors/font_outline_color = Color(0.2, 0.2, 0.2, 1)
+custom_colors/font_color = Color(1, 1, 1, 1)
+custom_constants/outline_size = 2
 structured_text_bidi_override_options = []
 script = null
 __meta__ = {
