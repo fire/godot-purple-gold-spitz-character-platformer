@@ -27,6 +27,8 @@ var _camera_light: OmniLight3D
 
 
 # Define for Movement
+const FLOOR_ANGLE_ON_FLOOR = deg2rad(45)
+const FLOOR_ANGLE_WHEN_JUMP = deg2rad(5)
 const GRAVITY: float = 30.0 # Gravitational Acceleration
 const DIRECTION_INTERPOLATE_SPEED: float = 1.0
 const MOTION_INTERPOLATE_SPEED: float = 20.0 # Movement Speed
@@ -160,7 +162,7 @@ func _apply_orientation(delta: float, orientation: Transform3D) -> void:
 
 	# Calc snap value
 	if self.is_on_floor() && !_state_is_jumping:    
-		self.snap = -self.get_floor_normal() - self.get_floor_velocity() * delta
+		self.snap = -self.get_floor_normal() - self.get_platform_velocity() * delta
 	else:
 		self.snap = Vector3.ZERO
 
@@ -168,9 +170,13 @@ func _apply_orientation(delta: float, orientation: Transform3D) -> void:
 	var tmp_velocity = self.linear_velocity;
 	self.linear_velocity = self.linear_velocity + final_jump_velocity
 	self.move_and_slide()
+
+	# Prevent snagging edge of moving platform when player jump on it
+	if self.is_on_floor() || (!self.is_on_floor() && abs(_state_gravity) >= self.linear_velocity.y):
+		self.floor_max_angle = FLOOR_ANGLE_ON_FLOOR
 	
 	# Don't go up slopes in the not floor
-	if !self.is_on_floor() && get_slide_count() > 0 && _state_jump_velocity.y <= 0:
+	if !self.is_on_floor() && self.get_slide_collision_count() > 0 && _state_jump_velocity.y <= 0:
 		self.linear_velocity.y = tmp_velocity.y
 
 	# Reset jump velocity
@@ -249,7 +255,7 @@ func _tps_movement(delta: float) -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	# After ready
 	if _once:
 		_once = false
@@ -265,10 +271,16 @@ func _process(delta):
 	# Input jump
 	if Input.is_action_just_pressed("action_jump"):
 		if self.is_on_floor():
+			self.floor_max_angle = FLOOR_ANGLE_WHEN_JUMP
 			_state_jump_velocity = Vector3(0, JUMP_SPEED, 0)
-			var floor_velocity = self.get_floor_velocity()
-			# Subtract velocity by moving playform
-			_state_jump_velocity += Vector3(floor_velocity.x * (1.0 - delta), 0, floor_velocity.z * (1.0 - delta))
+			var floor_velocity: Vector3 = self.get_platform_velocity()
+			# Add velocity by moving playform
+			_state_jump_velocity += Vector3(floor_velocity.x, -floor_velocity.y, floor_velocity.z)
+			# Prevent landing on moving platform just after the jump
+			var floor_bounce: Vector3 = Vector3(-floor_velocity.x, 0, -floor_velocity.z).bounce(self.get_floor_normal())
+			var floor_bounce_y: float = max(0, floor_bounce.y) + floor_velocity.y
+			if (floor_bounce_y > 0):
+				self.global_transform.origin = self.global_transform.origin + Vector3(0, floor_bounce_y * delta, 0)
 			# Reset
 			self.linear_velocity.y = 0
 			# Set state is jump
@@ -278,7 +290,7 @@ func _process(delta):
 				_state_was_running_before_jumping = true
 				# Prevent increasing velocity when jumping on a slope
 				var current_velocity_normal = self.linear_velocity.normalized()
-				var slide_velocity: Vector3 = Vector3(current_velocity_normal.x, 0, current_velocity_normal.y)
+				var slide_velocity: Vector3 = Vector3(current_velocity_normal.x, 0, current_velocity_normal.z)
 				slide_velocity = slide_velocity.normalized() * 4.0 # run root motion speed
 				_state_jump_speed = slide_velocity.length()
 			else:
